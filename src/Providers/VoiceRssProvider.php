@@ -67,7 +67,6 @@ class VoiceRssProvider extends AbstractProvider
         return $language;
     }
 
-
     /**
      * Set the language to use.
      *
@@ -132,6 +131,15 @@ class VoiceRssProvider extends AbstractProvider
         ];
     }
 
+    /**
+     * Get the format of this audio.
+     *
+     * @return string
+     */
+    public function getFormat(): string
+    {
+        return "wav";
+    }
 
     /**
      * Convert the specified text to audio.
@@ -147,8 +155,8 @@ class VoiceRssProvider extends AbstractProvider
             "src"   =>  $text,
             "hl"    =>  $this->language,
             "r"     =>  (string) $this->speed,
-            "c"     =>  "MP3",
-            "f"     =>  "16khz_16bit_stereo",
+            "c"     =>  "WAV",
+            "f"     =>  "8khz_16bit_mono",
         ]);
 
         if (substr($result, 0, 6) === "ERROR:") {
