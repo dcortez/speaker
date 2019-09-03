@@ -156,7 +156,7 @@ class VoiceRssProvider extends AbstractProvider
             "hl"    =>  $this->language,
             "r"     =>  (string) $this->speed,
             "c"     =>  "WAV",
-            "f"     =>  "8khz_16bit_mono",
+            "f"     =>  "8khz_8bit_mono",
         ]);
 
         if (substr($result, 0, 6) === "ERROR:") {
